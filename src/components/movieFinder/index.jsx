@@ -5,8 +5,9 @@ import { setInputValue, resetInputValue } from '../../actions/inputActions';
 
 export const MovieFinder = () =>{
     const [localInputValue, setLocalInputValue] = useState('');
+    const { inputValue } = useSelector((state) => state.inputReducer);
     const dispatch = useDispatch();
-
+    
     function handleInputChange(event) {
       setLocalInputValue(event.target.value);
       dispatch(setInputValue(event.target.value));
