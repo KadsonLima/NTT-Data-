@@ -1,11 +1,10 @@
 import { useState } from "react";
 import "./styles.scss";
-import { useSelector , useDispatch} from 'react-redux';
+import { useDispatch} from 'react-redux';
 import { setInputValue, resetInputValue } from '../../actions/inputActions';
 
 export const MovieFinder = () =>{
     const [localInputValue, setLocalInputValue] = useState('');
-    const { inputValue } = useSelector((state) => state.inputReducer);
     const dispatch = useDispatch();
     
     function handleInputChange(event) {
