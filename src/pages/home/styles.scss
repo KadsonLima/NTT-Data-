@@ -1,0 +1,31 @@
+.home{
+    width: 100%;
+    max-width: 1250px;
+    margin-top: 70px;
+}
+
+h1{
+    font-size: 1.6rem;
+    margin-bottom: -2px;
+}
+
+p{
+    font-size: 1rem;
+    margin-bottom: 47px;
+}
+
+button{
+    width: 100%;
+    border-radius: 6px;
+    max-width: 136px;
+    height: 31px;
+    background-color: #808080;
+    color: white;
+    border: none;
+    cursor: pointer;
+
+    &:hover{
+        filter: brightness(0.8);
+    }
+
+}
