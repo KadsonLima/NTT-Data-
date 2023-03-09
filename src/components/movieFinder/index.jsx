@@ -1,15 +1,29 @@
-import "./styles.scss"
+import { useState } from "react";
+import "./styles.scss";
+import { useDispatch} from 'react-redux';
+import { setInputValue, resetInputValue } from '../../actions/inputActions';
 
 export const MovieFinder = () =>{
-
+    const [localInputValue, setLocalInputValue] = useState('');
+    const dispatch = useDispatch();
+    
+    function handleInputChange(event) {
+      setLocalInputValue(event.target.value);
+      dispatch(setInputValue(event.target.value));
+    }
+  
+    function handleResetClick() {
+      setLocalInputValue('');
+      dispatch(resetInputValue());
+    }
 
     return <div className="MovieFinder">
         <h1>Title</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</p>
         <div className="finder">
-            <input></input>
+            <input type="text" value={localInputValue} onChange={handleInputChange}/>
             <button>Search</button>
-            <button>Reset</button>
+            <button onClick={handleResetClick}>Reset</button>
         </div>
     </div>
 }
